@@ -48,7 +48,7 @@ In the code chunk below, load in the packages necessary for your analysis. You s
 
 ```{r}
 #| label: setup
-
+library(tidyverse) #load package of all the tidyverse packages
 ```
 
 # Part 2: Data Context
@@ -79,18 +79,17 @@ We are going to use the `read_csv()` function to load in the `surveys.csv` datas
 
 ```{r}
 #| label: load-data
-
-surveys <- read_csv("data/surveys.csv")
-#glimpse(surveys)
+surveys <- read_csv("data/surveys.csv") # reads csv file data
+glimpse(surveys) # loads data frame summary
 ```
 
 **1. What are the dimensions (# of rows and columns) of these data?**
 
-<!-- Run the commented code in the load-data chunk to address this question!  -->
+> There are 30463 rows and 15 columns on this dataset. 
 
 **2. What are the data types of the variables in this dataset?**
 
-<!-- Run the commented code in the load-data chunk to address this question!  -->
+> Variables such as sex, species, and taxa represent qualitative nominal variables. Variables such as weight and hindfoot length represent quantitave continuous variables. Variables such as month, day, and year, represent quantitave discrete variables. 
 
 # Part 3: Exploratory Data Analysis with **`ggplot2`**
 
@@ -115,7 +114,7 @@ Let's get started!
 
 ```{r}
 #| label: scatterplot
-
+ggplot(data = surveys) + geom_point(mapping = aes(x = "weight", y = "hindfoot_length"))
 ```
 
 We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.
