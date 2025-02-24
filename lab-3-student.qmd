@@ -117,8 +117,15 @@ Let's get started!
 ```{r}
 #| label: scatterplot
 ggplot(data = surveys) + # creates scatterplot
-  (mapping = aes(x = weight, y = hindfoot_length)) +
-  geom_point()
+  (mapping = aes(x = weight, y = hindfoot_length, color = species, fill = species)) +
+  geom_point(alpha = 10) # adds transparency to data points +
+  labs(
+    title = "Weight and Hindfoot Length Among Rodent Species",
+    x = "Weight (g)",
+    y = "Hindfoot Length (mm)", 
+    color = "Species",
+    shape = "Species"
+  )
 ```
 
 We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.
