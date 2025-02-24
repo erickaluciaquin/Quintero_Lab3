@@ -116,9 +116,14 @@ Let's get started!
 
 ```{r}
 #| label: scatterplot
-ggplot(data = surveys) + # creates scatterplot
-  (mapping = aes(x = weight, y = hindfoot_length, color = species, fill = species)) +
-  geom_point(alpha = 10) # adds transparency to data points +
+ggplot(data = surveys,
+       mapping = aes(x = weight, 
+                     y = hindfoot_length, 
+                     color = species, 
+                     fill = species)) +
+  
+  geom_point(alpha = 10) +
+  
   labs(
     title = "Weight and Hindfoot Length Among Rodent Species",
     x = "Weight (g)",
