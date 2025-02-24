@@ -126,10 +126,10 @@ ggplot(data = surveys,
   
   labs(
     title = "Weight and Hindfoot Length Among Rodent Species",
+    subtitle = "Hindfoot Length (mm)",
     x = "Weight (g)",
-    y = "Hindfoot Length (mm)", 
-    color = "Species",
-    shape = "Species"
+    y = "", 
+    color = "Species"
   )
 ```
 
@@ -159,7 +159,14 @@ It takes a larger cognitive load to read text that is rotated. It is common prac
 
 ```{r}
 #| label: boxplot
-
+ggplot(data = surveys,
+       mapping = aes(x = weight, 
+                     y = hindfoot_length, 
+                     color = species, 
+                     fill = species)) +
+  
+  geom_boxplot(alpha = 10) +
+  geom_point()
 
 ```
 
