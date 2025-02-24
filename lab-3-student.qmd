@@ -1,3 +1,12 @@
+---
+title: "Lab 3: Exploring Rodents With ggplot2"
+author: "Ericka Quintero"
+date: "February 23, 2025"
+format: html
+ execute: false
+ echo: true
+---
+
 # Part 1: Setup
 
 ## GitHub Workflow
