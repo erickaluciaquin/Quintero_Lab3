@@ -2,9 +2,11 @@
 title: "Lab 3: Exploring Rodents With ggplot2"
 author: "Ericka Quintero"
 date: "February 23, 2025"
-format: html
- execute: false
- echo: true
+output:
+  html_document:
+  echo: true
+  embed-resources: true
+  code-tools: true
 ---
 
 # Part 1: Setup
@@ -101,9 +103,9 @@ To build a `ggplot()`, we will use the following basic template that can be used
 #| eval: false
 #| label: ggplot-template-code
 
-ggplot(data = <DATA>,
-       mapping = aes(<VARIABLE MAPPINGS>)) +
-  <GEOM_FUNCTION>()
+# ggplot(data = <DATA>,
+       # mapping = aes(<VARIABLE MAPPINGS>)) +
+  # <GEOM_FUNCTION>()
 ```
 
 Let's get started!
@@ -114,7 +116,9 @@ Let's get started!
 
 ```{r}
 #| label: scatterplot
-ggplot(data = surveys) + geom_point(mapping = aes(x = "weight", y = "hindfoot_length"))
+ggplot(data = surveys) + # creates scatterplot
+  (mapping = aes(x = weight, y = hindfoot_length)) +
+  geom_point()
 ```
 
 We can see there are **a lot** of points plotted on top of each other. Let's try and modify this plot to extract more information from it.
